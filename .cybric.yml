@@ -1,0 +1,7 @@
+version: '1.0'
+output_format: json
+log_level: DEBUG
+source:
+  integration_name: Bandit10
+  target_name: Bandit10
+  policy_name: Bandit10
