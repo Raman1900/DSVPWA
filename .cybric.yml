@@ -2,7 +2,4 @@ version: '1.0'
 output_format: json
 log_level: DEBUG
 source:
-  integration_name: Bandit10
-  target_name: Bandit10
-  policy_name: bandit10
-  policy ID:fUDJEW2YTtOvipwRml5plw
+  policy ID:anJZ3RKhRKa_uX7sxOju9w
