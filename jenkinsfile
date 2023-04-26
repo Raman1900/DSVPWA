@@ -9,7 +9,8 @@ pipeline {
 	
 	stage('Install Bandit') {
             steps {
-                powershell 'python --version'
+                sh 'pwd'
+		sh 'echo hello'
             }
         }
      }
