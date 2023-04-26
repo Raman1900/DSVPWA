@@ -10,7 +10,7 @@ pipeline {
 	stage('Install Bandit') {
             steps {
                 sh 'pwd'
-		sh 'echo hello'
+		sh 'echo "hello"'
             }
         }
      }
