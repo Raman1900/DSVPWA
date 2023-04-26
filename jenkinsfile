@@ -9,7 +9,7 @@ pipeline {
 	
 	stage('Install Bandit') {
             steps {
-		bat 'echo "hello"'
+		bat 'python --version'
             }
         }
      }
