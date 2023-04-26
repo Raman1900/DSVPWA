@@ -9,7 +9,7 @@ pipeline {
 	
 	stage('Install Bandit') {
             steps {
-                sh "pip install bandit"
+                powershell 'pip install bandit'
             }
         }
      }
