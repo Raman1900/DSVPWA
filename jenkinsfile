@@ -6,12 +6,23 @@ pipeline {
 				echo 'Welcome to LambdaTest'
 			}
 		}
-	
+
 	stage('Install Bandit') {
             steps {
+		bat 'python --version'
 		sh 'python --version'
             }
         }
+     }
+     
+     post {
+         success {
+             echo 'Pipeline succeeded!'
+         }
+         
+         failure {
+             echo 'Pipeline failed!'
+         }
      }
 }
 
