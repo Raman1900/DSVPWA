@@ -14,6 +14,8 @@ pipeline {
 		
 		sh 'virtualenv bandit-env'
 		sh 'python3 -m venv bandit-env'
+		sh 'source bandit-env/bin/activate'
+		sh 'pip install bandit'
 		sh 'bandit -r dsvpwa'
             }
         }
