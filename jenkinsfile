@@ -11,7 +11,9 @@ pipeline {
             steps {
 		sh 'python3 --version'
 		sh 'pip --version'
-		sh 'pip install bandit'
+		
+		sh 'virtualenv bandit-env'
+		sh 'python3 -m venv bandit-env'
 		sh 'bandit -r dsvpwa'
             }
         }
