@@ -11,7 +11,7 @@ pipeline {
             steps {
 		sh 'python3 --version'
 		sh 'pip --version'
-		
+		sh 'pip install virtualenv'
 		sh 'virtualenv bandit-env'
 		sh 'python3 -m venv bandit-env'
 		sh 'source bandit-env/bin/activate'
