@@ -13,6 +13,23 @@ pipeline {
 		sh 'pip --version'
 		sh 'bandit --version'
 		sh 'bandit -r dsvpwa -o results.json'
+		sh 'curl -X 'POST' \
+  'https://demo.defectdojo.org/api/v2/reimport-scan/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -H 'Authorization: Token 548afd6fab3bea9794a41b31da0e9404f733e222' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'minimum_severity=Info' \
+  -F 'test=42' \
+  -F 'active=true' \
+  -F 'verified=true' \
+  -F 'do_not_reactivate=false' \
+  -F 'file=@results.json;type=application/json' \
+  -F 'scan_type=Bandit Scan' \
+  -F 'push_to_jira=false' \
+  -F 'close_old_findings=false' \
+  -F 'close_old_findings_product_scope=false' \
+  -F 'create_finding_groups_for_all_findings=true''
             }
         }
      }
