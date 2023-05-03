@@ -12,7 +12,7 @@ pipeline {
 		sh 'python3 --version'
 		sh 'pip --version'
 		sh 'bandit --version'
-		sh 'bandit -r dsvpwa'
+		sh 'bandit -r dsvpwa -o results.json'
             }
         }
      }
