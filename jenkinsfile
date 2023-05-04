@@ -12,7 +12,7 @@ pipeline {
 		sh 'python3 --version'
 		sh 'pip --version'
 		sh 'bandit --version'
-		sh 'bandit -r dsvpwa -o results.json'
+		sh 'bandit -r dsvpwa -f json -o results.json'
 		sh '''curl -X \'POST\' \\
   \'https://demo.defectdojo.org/api/v2/reimport-scan/\' \\
   -H \'accept: application/json\' \\
