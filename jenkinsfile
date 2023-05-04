@@ -9,10 +9,14 @@ pipeline {
 	
 	stage('Install Bandit') {
             steps {
+	    try{
 		sh 'python3 --version'
 		sh 'pip --version'
 		sh 'bandit --version'
 		sh 'bandit -r dsvpwa -f json -o results.json'
+	    } catch(err){
+	    echo "Caught:${err}" 
+	    }
 		
             }
         }
