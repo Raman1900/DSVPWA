@@ -18,7 +18,7 @@ pipeline {
         }
 	stage('Upload results to Defectdojo') {
             steps {
-		sh 'curl --location 'https://demo.defectdojo.org/api/v2/import-scan/' \
+		sh ''curl --location 'https://demo.defectdojo.org/api/v2/import-scan/' \
 
 			--header 'accept: application/json' \
 
