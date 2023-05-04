@@ -18,35 +18,35 @@ pipeline {
         }
 	stage('Upload results to Defectdojo') {
             steps {
-		sh ''curl --location 'https://demo.defectdojo.org/api/v2/import-scan/' \
+		sh """ curl --location 'https://demo.defectdojo.org/api/v2/import-scan/' \
 
-			--header 'accept: application/json' \
+--header 'accept: application/json' \
 
-			--header 'X-CSRFToken: 7sLUORyD0E4Zp5B0FUQk68U3QOIoISHUJdSFmtmBQy9wxDkfkMZVoo3SyatuemBZ' \
+--header 'X-CSRFToken: 7sLUORyD0E4Zp5B0FUQk68U3QOIoISHUJdSFmtmBQy9wxDkfkMZVoo3SyatuemBZ' \
 
-			--header 'Authorization: Token 548afd6fab3bea9794a41b31da0e9404f733e222' \
+--header 'Authorization: Token 548afd6fab3bea9794a41b31da0e9404f733e222' \
 
-			--form 'minimum_severity="Info"' \
+--form 'minimum_severity="Info"' \
 
-			--form 'active="true"' \
+--form 'active="true"' \
 
-			--form 'verified="true"' \
+--form 'verified="true"' \
 
-			--form 'scan_type="Bandit Scan"' \
+--form 'scan_type="Bandit Scan"' \
 
-			--form 'close_old_findings="false"' \
+--form 'close_old_findings="false"' \
 
-			--form 'close_old_findings_product_scope="false"' \
+--form 'close_old_findings_product_scope="false"' \
 
-			--form 'push_to_jira="false"' \
+--form 'push_to_jira="false"' \
 
-			--form 'create_finding_groups_for_all_findings="true"' \
+--form 'create_finding_groups_for_all_findings="true"' \
 
-			--form 'product_name="GitLab pipeline demo"' \
+--form 'product_name="GitLab pipeline demo"' \
 
-			--form 'engagement_name="bandit engagement"' \
+--form 'engagement_name="bandit engagement"' \
 
-			--form 'file=@"results.json"''
+--form 'file=@results.json'"""
 		
             	}
        	 }
