@@ -9,6 +9,7 @@ pipeline {
 
         stage('Install Bandit') {
             steps {
+            Script{
                 try {
                     sh 'python3 --version'
                     sh 'pip --version'
@@ -16,6 +17,7 @@ pipeline {
                     sh 'bandit -r dsvpwa -f json -o results.json'
                 } catch (err) {
                     echo "Caught:${err}" 
+                }
                 }
             }
         }
