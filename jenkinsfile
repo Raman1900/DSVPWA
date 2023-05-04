@@ -1,58 +1,43 @@
 pipeline {
-     agent any
-     stages {
-         stage('Welcome Step') {
-			steps {
-				echo 'Welcome to LambdaTest'
-			}
-		}
-	
-	stage('Install Bandit') {
+    agent any
+    stages {
+        stage('Welcome Step') {
             steps {
-	    try{
-		sh 'python3 --version'
-		sh 'pip --version'
-		sh 'bandit --version'
-		sh 'bandit -r dsvpwa -f json -o results.json'
-	    } catch(err){
-	    echo "Caught:${err}" 
-	    }
-		
+                echo 'Welcome to LambdaTest'
             }
         }
-	stage('Upload results to Defectdojo') {
+
+        stage('Install Bandit') {
             steps {
-		sh """ curl --location 'https://demo.defectdojo.org/api/v2/import-scan/' \
+                try {
+                    sh 'python3 --version'
+                    sh 'pip --version'
+                    sh 'bandit --version'
+                    sh 'bandit -r dsvpwa -f json -o results.json'
+                } catch (err) {
+                    echo "Caught:${err}" 
+                }
+            }
+        }
 
---header 'accept: application/json' \
-
---header 'X-CSRFToken: 7sLUORyD0E4Zp5B0FUQk68U3QOIoISHUJdSFmtmBQy9wxDkfkMZVoo3SyatuemBZ' \
-
---header 'Authorization: Token 548afd6fab3bea9794a41b31da0e9404f733e222' \
-
---form 'minimum_severity="Info"' \
-
---form 'active="true"' \
-
---form 'verified="true"' \
-
---form 'scan_type="Bandit Scan"' \
-
---form 'close_old_findings="false"' \
-
---form 'close_old_findings_product_scope="false"' \
-
---form 'push_to_jira="false"' \
-
---form 'create_finding_groups_for_all_findings="true"' \
-
---form 'product_name="GitLab pipeline demo"' \
-
---form 'engagement_name="bandit engagement"' \
-
---form 'file=@results.json'"""
-		
-            	}
-       	 }
-     }
+        stage('Upload results to Defectdojo') {
+            steps {
+                sh """curl --location 'https://demo.defectdojo.org/api/v2/import-scan/' \
+                    --header 'accept: application/json' \
+                    --header 'X-CSRFToken: 7sLUORyD0E4Zp5B0FUQk68U3QOIoISHUJdSFmtmBQy9wxDkfkMZVoo3SyatuemBZ' \
+                    --header 'Authorization: Token 548afd6fab3bea9794a41b31da0e9404f733e222' \
+                    --form 'minimum_severity=\"Info\"' \
+                    --form 'active=\"true\"' \
+                    --form 'verified=\"true\"' \
+                    --form 'scan_type=\"Bandit Scan\"' \
+                    --form 'close_old_findings=\"false\"' \
+                    --form 'close_old_findings_product_scope=\"false\"' \
+                    --form 'push_to_jira=\"false\"' \
+                    --form 'create_finding_groups_for_all_findings=\"true\"' \
+                    --form 'product_name=\"GitLab pipeline demo\"' \
+                    --form 'engagement_name=\"bandit engagement\"' \
+                    --form 'file=@results.json'"""
+            }
+        }
+    }
 }
