@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Welcome Step') {
             steps {
-                echo 'Welcome to LambdaTest'
+                echo 'Welcome to Jenkins stage 1'
             }
         }
 
@@ -37,7 +37,7 @@ pipeline {
                     --form 'push_to_jira=\"false\"' \
                     --form 'create_finding_groups_for_all_findings=\"true\"' \
                     --form 'product_name=\"GitLab pipeline demo\"' \
-                    --form 'engagement_name=\"Bandit Scan 2\"' \
+                    --form 'engagement_name=\"bandit engagement 2\"' \
                     --form 'file=@results.json'"""
             }
         }
