@@ -36,8 +36,8 @@ pipeline {
                     --form 'close_old_findings_product_scope=\"false\"' \
                     --form 'push_to_jira=\"false\"' \
                     --form 'create_finding_groups_for_all_findings=\"true\"' \
-                    --form 'product_name=\"GitLab pipeline demo\"' \
-                    --form 'engagement_name=\"bandit engagement 2\"' \
+                    --form 'product_name=\"Internal CRM App\"' \
+                    --form 'engagement_name=\"Python Code\"' \
                     --form 'file=@results.json'"""
             }
         }
