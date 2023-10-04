@@ -37,7 +37,7 @@ pipeline {
                     --form 'push_to_jira=\"false\"' \
                     --form 'create_finding_groups_for_all_findings=\"true\"' \
                     --form 'product_name=\"Appsec_TechTalk\"' \
-                    --form 'engagement_name=\"Python_code_1\"' \
+                    --form 'engagement_name=\"Python_code_2\"' \
                     --form 'file=@results.json'"""
             }
         }
