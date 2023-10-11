@@ -14,7 +14,7 @@ pipeline {
                     sh 'python3 --version'
                     sh 'pip --version'
                     sh 'bandit --version'
-                    sh 'bandit -r docs -f json -o results.json'
+                    sh 'bandit -r dsvpwa -f json -o results.json'
                 } catch (err) {
                     echo "Caught:${err}" 
                 }
@@ -36,8 +36,8 @@ pipeline {
                     --form 'close_old_findings_product_scope=\"false\"' \
                     --form 'push_to_jira=\"false\"' \
                     --form 'create_finding_groups_for_all_findings=\"true\"' \
-                    --form 'product_name=\"AppSec_techTalk_2\"' \
-                    --form 'engagement_name=\"python_techtalk_1\"' \
+                    --form 'product_name=\"AppSec_product\"' \
+                    --form 'engagement_name=\"AppSec_product_1_CICD\"' \
                     --form 'file=@results.json'"""
             }
         }
