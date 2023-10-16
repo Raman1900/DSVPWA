@@ -15,8 +15,7 @@ pipeline {
                     sh 'pip --version'
                     sh 'bandit --version'
                     sh 'bandit -r docs -f json -o results.json'
-                    sh 'less results.json'
-                    echo "$(<results.json)"
+                    type results.json
                 } catch (err) {
                     echo "Caught:${err}" 
                 }
