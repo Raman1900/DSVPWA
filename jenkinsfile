@@ -15,7 +15,10 @@ pipeline {
                     sh 'pip --version'
                     sh 'bandit --version'
                     sh 'bandit -r docs -f json -o results.json'
-                    type results.json
+                    script {
+                     def json = readJSON file: './output/results.json'                    
+		             echo "${json}"
+                } 
                 } catch (err) {
                     echo "Caught:${err}" 
                 }
