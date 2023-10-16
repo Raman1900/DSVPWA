@@ -15,6 +15,7 @@ pipeline {
                     sh 'pip --version'
                     sh 'bandit --version'
                     sh 'bandit -r docs -f json -o results.json'
+                    sh 'cat results.json'
                 } catch (err) {
                     echo "Caught:${err}" 
                 }
