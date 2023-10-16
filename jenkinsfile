@@ -36,8 +36,8 @@ pipeline {
                     --form 'close_old_findings_product_scope=\"false\"' \
                     --form 'push_to_jira=\"false\"' \
                     --form 'create_finding_groups_for_all_findings=\"true\"' \
-                    --form 'product_name=\"AppSec_product\"' \
-                    --form 'engagement_name=\"AppSec_product_2_CICD\"' \
+                    --form 'product_name=\"apssec_product1\"' \
+                    --form 'engagement_name=\"engagement1\"' \
                     --form 'file=@results.json'"""
             }
         }
