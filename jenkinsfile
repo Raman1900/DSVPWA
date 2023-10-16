@@ -14,7 +14,7 @@ pipeline {
                     sh 'python3 --version'
                     sh 'pip --version'
                     sh 'bandit --version'
-                    sh 'bandit -r docs -f json -o results.json'
+                    sh 'bandit -r dsvpwa -f json -o results.json'
                 } catch (err) {
                     echo "Caught:${err}" 
                 }
