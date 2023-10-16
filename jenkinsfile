@@ -37,7 +37,7 @@ pipeline {
                     --form 'push_to_jira=\"false\"' \
                     --form 'create_finding_groups_for_all_findings=\"true\"' \
                     --form 'product_name=\"apssec_product1\"' \
-                    --form 'engagement_name=\"engagement1\"' \
+                    --form 'engagement_name=\"engagement2\"' \
                     --form 'file=@results.json'"""
             }
         }
