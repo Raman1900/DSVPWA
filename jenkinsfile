@@ -29,7 +29,7 @@ pipeline {
                 sh """curl --location 'https://demo.defectdojo.org/api/v2/import-scan/' \
                     --header 'accept: application/json' \
                     --header 'X-CSRFToken: 7sLUORyD0E4Zp5B0FUQk68U3QOIoISHUJdSFmtmBQy9wxDkfkMZVoo3SyatuemBZ' \
-                    --header 'Authorization: Token 548afd6fab3bea9794a41b31da0e9404f733e222' \
+                    --header 'Authorization: Token 340300df0e51133330d43ab4a008784230800f24' \
                     --form 'minimum_severity=\"Info\"' \
                     --form 'active=\"true\"' \
                     --form 'verified=\"true\"' \
