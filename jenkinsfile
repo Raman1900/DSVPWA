@@ -15,7 +15,7 @@ pipeline {
                     sh 'python3 --version'
                     sh 'pip --version'
                     sh 'bandit --version'
-                    sh 'bandit -r dsvpwa -f json -o results.json'
+                    sh 'bandit -r docs -f json -o results.json'
                    
                 } catch (err) {
                     echo "Caught:${err}" 
@@ -39,7 +39,7 @@ pipeline {
                     --form 'push_to_jira=\"false\"' \
                     --form 'create_finding_groups_for_all_findings=\"true\"' \
                     --form 'product_name=\"appsec_product\"' \
-                    --form 'engagement_name=\"engagement1\"' \
+                    --form 'engagement_name=\"APpsec_engagement2\"' \
                     --form 'file=@results.json'"""
             }
         }
